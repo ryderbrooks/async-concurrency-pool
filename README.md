@@ -43,7 +43,8 @@ class FooAgent {
         });
       }     
 }
-// this will be called with no arguments when a new instance of your agent is needed 
+// this will be called with no arguments
+// when a new instance of your agent is needed 
 function agentFactory(){
   return new FooAgent();
 }
@@ -57,16 +58,18 @@ async function doSomethingWithAgentPool() {
   
   
   /**
-  *  The following loop will execute .doSomethingAsync in parallel UNTIL `maxAgents`
-  *  has been reached. At that point all future calls to .doSomethingAsync will
-  *  essentially execute in series moving to the next iteration when the fastest pending async
+  *  The following loop will execute .doSomethingAsync 
+  *  in parallel UNTIL `maxAgents` has been reached. 
+  *  At that point all future calls to .doSomethingAsync will
+  *  essentially execute in series moving to the 
+  *  next iteration when the fastest pending async
   *  task in the pool completes
   **/
   
   for await(const agent of agentPool){
     
-    // it is necessary to implement your own logic for breaking from the loop
-    // as the pool will loop indefinitely
+    // it is necessary to implement your own logic for 
+    // breaking from the loop as the pool will loop indefinitely
     cnt += 1;
     if (cnt > 10){
       break;
@@ -74,8 +77,10 @@ async function doSomethingWithAgentPool() {
     
     // when the agent has completed the task you must manually call either
     // agentPool.add(agent) OR agentPool.remove(agent)
-    // failure to do so will result in the loop pausing indefinitely once maxAgents has
-    // been reached as the pool is intentionally ignorant about when your agent has completed it's  work.
+    // failure to do so will result in the loop pausing 
+    // indefinitely once maxAgents has been reached as the 
+    // pool is intentionally ignorant about when your 
+    // agent has completed it's  work.
     agent.doSomethingAsync(cnt)
     .then((n)=>{
       // return the agent to the pool to be reused later
@@ -88,12 +93,14 @@ async function doSomethingWithAgentPool() {
       return err;
     })
 
-    // NOTE: using .then .catch .finally on the agent allows tasks to be run in parallel
-    // using await agent.doSomethingAsync(cnt) would result in everything being run in 
-    // series    
+    // NOTE: using .then .catch .finally on the agent 
+    // allows tasks to be run in parallel 
+    // using await agent.doSomethingAsync(cnt) would
+    // result in everything being run in  series    
   }
 }
 ```
 
-##Tests
+## Tests
+
 ```npm run test```

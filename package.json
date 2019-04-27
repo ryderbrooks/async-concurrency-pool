@@ -21,9 +21,13 @@
     "url": "https://github.com/ryderbrooks/async-concurrency-pool/issues"
   },
   "files": [
+    "dist/lib/**.js",
+    "dist/lib/*.d.ts",
+    "dist/meta/*.d.ts",
+    "dist/test/*.js",
+    "dist/test/TimerHelper.d.ts",
     "dist/index.js",
-    "dist/index.d.ts",
-    "dist/lib/*.js"
+    "dist/index.d.ts"
   ],
   "keywords": [],
   "author": "",

@@ -52,7 +52,7 @@
     "exclude": [
       "**/node_modules/!(@ragent|!@types)/!(node)/**"
     ],
-    "name": "ragent-throttle",
+    "name": "async-concurrency-pool",
     "theme": "default"
   }
 }

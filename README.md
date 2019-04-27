@@ -1,14 +1,20 @@
-# async-concurrency-pool
+## Async-Concurrency-Pool
+Node.js pool for limiting the number of asynchronous tasks that run concurrently. 
+
+
+
 [![Build Status](https://travis-ci.org/ryderbrooks/async-concurrency-pool.svg?branch=master)](https://travis-ci.org/ryderbrooks/agent-pool)
-[![Coverage Status](https://coveralls.io/repos/github/ryderbrooks/async-concurrency-pool/badge.svg?branch=master)](https://coveralls.io/github/ryderbrooks/async-concurrency-pool?branch=master)[![npm](https://img.shields.io/npm/v/ragent-pool.svg)](https://www.npmjs.com/package/async-concurrency-pool)[![Greenkeeper badge](https://badges.greenkeeper.io/ryderbrooks/async-concurrency-pool.svg)](https://greenkeeper.io/)
+[![Coverage Status](https://coveralls.io/repos/github/ryderbrooks/async-concurrency-pool/badge.svg?branch=master)](https://coveralls.io/github/ryderbrooks/async-concurrency-pool?branch=master)
+[![npm](https://img.shields.io/npm/v/ragent-pool.svg)](https://www.npmjs.com/package/async-concurrency-pool)
+[![Greenkeeper badge](https://badges.greenkeeper.io/ryderbrooks/async-concurrency-pool.svg)](https://greenkeeper.io/)
+
 
 
 
 ## Install
 ```npm install async-concurrency-pool```
-
 # Usage
-```ecmascript 6
+```javascript
 import { createAsyncPool } from 'async-concurrency-pool';
 
 

@@ -1,0 +1,57 @@
+{
+  "name": "async-concurrency-pool",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "setup": "npm install",
+    "build": "tsc",
+    "test": "nyc ./node_modules/mocha/bin/mocha dist/test/ ",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "clean": "shx rm -rf node_modules/ dist/ docs/",
+    "typedoc": "typedoc",
+    "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryderbrooks/async-concurrency-pool.git"
+  },
+  "homepage": "https://github.com/ryderbrooks/async-concurrency-pool#readme",
+  "bugs": {
+    "url": "https://github.com/ryderbrooks/async-concurrency-pool/issues"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/lib/*.js"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ragent/cross-types": "^3.0.0",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.8",
+    "@types/sinon": "^7.0.11",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "@typescript-eslint/typescript-estree": "^1.7.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.15.3",
+    "mocha": "^6.1.4",
+    "nyc": "^13.3.0",
+    "shx": "^0.3.2",
+    "sinon": "^7.3.2",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "pop-set": "^0.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

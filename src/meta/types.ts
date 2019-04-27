@@ -1,0 +1,1 @@
+export type tAgentConstructor<T> = () => Promise<T>;

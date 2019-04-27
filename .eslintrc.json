@@ -1,0 +1,66 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "globalReturn": false,
+      "jsx": false
+    },
+    "filePath": "",
+    "tsconfigRootDir": "",
+    "extraFileExtensions": [],
+    "warnOnUnsupportedTypeScriptVersion": true
+  },
+  "rules": {
+    "adjacent-overload-signatures": true,
+    "indent": "off",
+    "no-console": "warn",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/camelcase": "warn",
+    "@typescript-eslint/prefer-interface": "off",
+    "no-fallthrough": "warn",
+    "@typescript-eslint/class-name-casing": "off",
+    "@typescript-eslint/no-object-literal-type-assertion": [
+      "error",
+      {
+        "allowAsParameter": true
+      }
+    ],
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/interface-name-prefix": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.md"
+      ],
+      "rules": {
+        "no-undef": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*_test.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# IntelliJ project files
+.idea
+
+# Dependency directories
+node_modules
+
+# Output of 'npm pack'
+*.tgz
+
+# IntelliJ
+docs
+/dist

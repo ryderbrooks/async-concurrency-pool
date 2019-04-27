@@ -10,8 +10,7 @@
     "test": "nyc ./node_modules/mocha/bin/mocha dist/test/ ",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "clean": "shx rm -rf node_modules/ dist/ docs/",
-    "typedoc": "typedoc",
-    "posttypedoc": "shx cp .nojekyll docs/.nojekyll"
+    "typedoc": "typedoc"
   },
   "repository": {
     "type": "git",

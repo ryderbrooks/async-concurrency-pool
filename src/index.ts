@@ -10,4 +10,4 @@ export function createAsyncPool<T>( agentConstructor: tAgentConstructor<T>,
   return new AsyncPool(agentConstructor, maxAgents);
 }
 
-export { TestHelperTypes, LoopStats } from './test/TimerHelper';
+export { TestHelperTypes, LoopStats } from './__tests__/TimerHelper';

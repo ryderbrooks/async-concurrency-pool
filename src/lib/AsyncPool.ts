@@ -44,6 +44,7 @@ export class AsyncPool<T> implements IAsyncPool<T> {
         // we are below the maxAgent limit
         // create a new agent and fallthrough
         await this.createAgent();
+      //eslint-disable-next-line no-fallthrough
       case this.idle.size > 0:
         // we have an idle agent that can be used
         return this.idle.pop();

@@ -6,8 +6,9 @@
 ---
 
 [![Build Status](https://travis-ci.org/ryderbrooks/async-concurrency-pool.svg?branch=master)](https://travis-ci.org/ryderbrooks/agent-pool)
-[![Coverage Status](https://coveralls.io/repos/github/ryderbrooks/async-concurrency-pool/badge.svg?branch=master)](https://coveralls.io/github/ryderbrooks/async-concurrency-pool?branch=master)
-[![npm](https://img.shields.io/npm/v/ragent-pool.svg)](https://www.npmjs.com/package/async-concurrency-pool)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ryderbrooks_async-concurrency-pool&metric=alert_status)](https://sonarcloud.io/dashboard?id=ryderbrooks_async-concurrency-pool)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ryderbrooks_async-concurrency-pool&metric=coverage)](https://sonarcloud.io/dashboard?id=ryderbrooks_async-concurrency-pool)
+[![npm](https://img.shields.io/npm/v/async-concurrency-pool.svg)](https://www.npmjs.com/package/async-concurrency-pool)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ryderbrooks/async-concurrency-pool.svg)](https://greenkeeper.io/)
 
 ---

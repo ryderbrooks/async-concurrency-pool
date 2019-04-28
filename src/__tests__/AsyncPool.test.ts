@@ -1,4 +1,3 @@
-import { expect }                     from 'chai';
 import { IAsyncPool }                 from '../meta/interfaces';
 import { LoopStats, TestHelperTypes } from './TimerHelper';
 import { IRequestable }               from '@ragent/cross-types';
@@ -10,7 +9,7 @@ import TEST_PATHS = TestHelperTypes.TEST_PATHS;
 
 describe('AsyncPool', () => {
 
-  context('consumed as iterator', () => {
+  describe('consumed as iterator', () => {
 
     class LStats extends LoopStats<IRequestable<sTestArgs, sTestResponse>,
       IAsyncPool<IRequestable<sTestArgs, sTestResponse>>,
@@ -58,7 +57,7 @@ describe('AsyncPool', () => {
           testConditions,
           createAsyncPool).run();
 
-        expect(results.totalLoopTime).to.be.below(100);
+        expect(results.totalLoopTime).toBeLessThan(100);
       });
 
       it('tasks resolve in the expected order', async () => {
@@ -76,10 +75,7 @@ describe('AsyncPool', () => {
                                         testConditions,
                                         createAsyncPool).run();
 
-        expected.map(( d, i ) => expect(result.sortedBy.resolutionTime[ i ])
-          .to
-          .deep
-          .include(d));
+        expect(result.sortedBy.resolutionTime).toMatchObject(expected);
       });
     });
 
@@ -96,7 +92,7 @@ describe('AsyncPool', () => {
         const result                      = await new LStats(maxAgents,
                                                              testConditions,
                                                              createAsyncPool).run();
-        expect(result.maxAllocAgents).to.equal(maxAgents);
+        expect(result.maxAllocAgents).toEqual(maxAgents);
       });
       it('pauses loop until a task resolves', async () => {
         const maxAgents                   = 2;
@@ -109,7 +105,8 @@ describe('AsyncPool', () => {
         const result = await new LStats(maxAgents,
                                         testConditions,
                                         createAsyncPool).run();
-        expect(result.totalLoopTime).to.be.be.within(250, 300);
+        expect(result.totalLoopTime).toBeGreaterThan(250);
+        expect(result.totalLoopTime).toBeLessThan(300);
       });
 
       it('resolves tasks in the expected order', async () => {
@@ -128,9 +125,8 @@ describe('AsyncPool', () => {
         const result = await new LStats(maxAgents,
                                         testConditions,
                                         createAsyncPool).run();
-        expected.map(( d, i ) => {
-          expect(result.sortedBy.resolutionTime[ i ]).to.deep.include(d);
-        });
+
+        expect(result.sortedBy.resolutionTime).toMatchObject(expected);
       });
     });
   });

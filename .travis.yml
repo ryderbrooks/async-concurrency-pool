@@ -1,17 +1,29 @@
+dist: trusty
+sudo: required
 language: node_js
 node_js:
   - "11"
+
+jdk:
+  - oraclejdk8
+
+addons:
+  sonarcloud:
+    organization: "ryderbrooks-github"
+    token:
+      secure: $SONAR_TOKEN
 
 before_script:
   - npm run setup
   - npm run build
 
 script:
-  - npm run test
+  - npm run lint
+  - npm run testWithCoverage
 
 
 after_script:
-  - npm run coverage
+  - sonar-scanner
 
 after_success:
   - npm run typedoc
@@ -24,7 +36,7 @@ deploy:
     local_dir: docs/
     github_token: $GITHUB_TOKEN
     on:
-      branch: master
+      tags: true
 
   - provider: releases
     api_key: $GITHUB_TOKEN

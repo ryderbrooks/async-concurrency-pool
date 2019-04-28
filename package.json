@@ -7,9 +7,9 @@
   "scripts": {
     "setup": "npm install",
     "build": "tsc",
-    "test": "nyc ./node_modules/mocha/bin/mocha dist/test/ ",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "clean": "shx rm -rf node_modules/ dist/ docs/",
+    "lint": "node_modules/.bin/eslint --ignore-path .gitignore ./src/**/*.ts -f json -o ./reports/lint/eslint.json",
+    "test": "node_modules/.bin/jest",
+    "testWithCoverage": "node_modules/.bin/jest --coverage",
     "typedoc": "typedoc"
   },
   "repository": {
@@ -34,25 +34,33 @@
   "license": "ISC",
   "devDependencies": {
     "@ragent/cross-types": "^3.0.0",
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.6",
+    "@types/jest": "^24.0.11",
     "@types/node": "^11.13.8",
-    "@types/sinon": "^7.0.11",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "@typescript-eslint/typescript-estree": "^1.7.0",
-    "chai": "^4.2.0",
-    "coveralls": "^3.0.3",
     "eslint": "^5.15.3",
-    "mocha": "^6.1.4",
-    "nyc": "^13.3.0",
-    "shx": "^0.3.2",
-    "sinon": "^7.3.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "jest": "^24.7.1",
+    "jest-sonar-reporter": "^2.0.0",
     "typedoc": "^0.14.2",
     "typescript": "^3.4.5"
   },
   "dependencies": {
     "pop-set": "^0.0.4"
+  },
+  "jest": {
+    "verbose": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "coverageDirectory": "reports/coverage",
+    "testMatch": [
+      "**/dist/__tests__/*.test.js"
+    ]
+  },
+  "jestSonar": {
+    "reportPath": "reports/coverage",
+    "reportFile": "test-reporter.xml",
+    "indent": 4
   },
   "publishConfig": {
     "access": "public"

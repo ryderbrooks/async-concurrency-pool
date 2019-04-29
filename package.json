@@ -24,8 +24,8 @@
     "dist/lib/**.js",
     "dist/lib/*.d.ts",
     "dist/meta/*.d.ts",
-    "dist/test/*.js",
-    "dist/test/TimerHelper.d.ts",
+    "dist/__tests__/*.js",
+    "dist/__tests__/TimerHelper.d.ts",
     "dist/index.js",
     "dist/index.d.ts"
   ],

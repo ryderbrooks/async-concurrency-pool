@@ -47,7 +47,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "pop-set": "^0.0.4"
+    "pop-set": "^0.0.5"
   },
   "jest": {
     "verbose": true,

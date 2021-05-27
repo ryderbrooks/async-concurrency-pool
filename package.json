@@ -44,7 +44,7 @@
     "jest": "^24.7.1",
     "jest-sonar-reporter": "^2.0.0",
     "typedoc": "^0.14.2",
-    "typescript": "^3.4.5"
+    "typescript": "^4.3.2"
   },
   "dependencies": {
     "pop-set": "^0.0.4"
